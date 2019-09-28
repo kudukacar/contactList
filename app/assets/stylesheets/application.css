@@ -82,6 +82,7 @@ table {
 .contacts > ul > a, .contact > div > ul > li {
     padding: 10px 0px;
     border-bottom: 1px solid lightgrey;
+    color: dimgray;
 }
 
 .contacts > a, .contact > a {
