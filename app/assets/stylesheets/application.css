@@ -90,11 +90,34 @@ table {
     color: coral;
 }
 
+/* .contact > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.contact > button, .form > div > button {
+    margin: 0px 0px 0px 100px;
+    background-color: coral;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 14px; 
+    padding: 12px 20px;
+    cursor: pointer;
+    border: none;
+}
+
 .contact {
     display: flex;
     justify-content: center;
     align-items: center;
     color: dimgray;
+}
+
+.contact > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contact > div > img {
@@ -128,13 +151,13 @@ table {
     border-bottom: 1px solid lightgray;
 }
 
-.form > input[type="submit"] {
+.form > div > input[type="submit"] {
     background: coral;
     color: white; 
     height: 40px;
     border: none;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 14px;
     margin: 40px 15px 10px 15px;
     padding: 0px 20px;
     cursor: pointer;

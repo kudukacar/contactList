@@ -11,7 +11,7 @@ const contactsReducer = (state = {}, action) => {
         case RECEIVE_CONTACTS:
             return contacts;
         case REMOVE_CONTACT: 
-            const newState = ({}, state);
+            let newState = merge({}, state);
             delete newState[id]; 
             return newState;
         default:

@@ -24,6 +24,7 @@ class ContactIndexItem extends React.Component {
                     </ul>
                 </div>
                 <Link to={`/editcontact/${contact.id}`}>Edit Contact</Link>
+                <button onClick={() => this.props.deleteContact(contact.id).then(() => this.props.history.push('/'))}>Delete Contact</button>
             </div>
 
         )
