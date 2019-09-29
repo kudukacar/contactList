@@ -66,58 +66,88 @@ table {
     text-decoration: none;
 }
 
-.contacts {
+.mainnav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 20px 100px;
     align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.leftnav > ul > li > a {
+    font-weight: bold;
+    font-size: 20px;
     color: dimgray;
 }
 
-.contacts > ul {
-    display: flex;
-    flex-direction: column;
-    padding-top: 50px;
-}
-
-.contacts > ul > a, .contact > div > ul > li {
-    padding: 10px 0px;
-    border-bottom: 1px solid lightgrey;
-    color: dimgray;
-}
-
-.contacts > a, .contact > a {
-    padding-left: 100px;
+.leftnav > ul > li > a:hover {
     color: coral;
 }
 
-/* .contact > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
-.contact > button, .form > div > button {
-    margin: 0px 0px 0px 100px;
-    background-color: coral;
-    color: #ffffff;
-    border-radius: 5px;
-    font-size: 14px; 
-    padding: 12px 20px;
-    cursor: pointer;
-    border: none;
+.rightnav > ul > li > a {
+    color: coral;
+    padding-right: 80px;
+    font-size: 20px;   
 }
 
-.contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.rightnav > ul > li > a:hover {
     color: dimgray;
 }
 
+.contacts {
+    margin: 20px 150px 0px 150px;
+}
+
+.contacts > li {
+    display: flex;
+    padding: 10px 0px;
+    color: dimgray;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.contacts > li > a:hover {
+    color: coral;
+}
+
+.contacts > li > a, .contact > div > ul > li {
+    padding: 20px 0px;
+    margin: 0px 100px 0px 50px;
+    color: dimgray;
+}
+
+.contact > div > ul > li {
+    border-bottom: 1px solid whitesmoke;
+}
+
+.contacts > li > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.contact > div > ul {
+    padding-bottom: 40px;   
+}
+
+.contact > span > a {
+    color: coral;
+    cursor: pointer;
+    padding: 40px;
+    font-size: 20px;
+}
+
+.contact > span > a:hover {
+    color: dimgray;
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .contact > div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: dimgray;
 }
 
 .contact > div > img {
@@ -132,14 +162,23 @@ table {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 0px;
     margin: 50px;
+    color: dimgray;
+}
+
+.form > div > a {
+    color: coral;
+    cursor: pointer;
+    padding: 40px;
+    font-size: 16px;
+
+}
+.form > div > a:hover {
     color: dimgray;
 }
 
 .form > label {
     padding-top: 20px; 
-    padding-bottom: 10px;
 }
 
 .form > input[type="text"] {
@@ -152,19 +191,25 @@ table {
 }
 
 .form > div > input[type="submit"] {
-    background: coral;
-    color: white; 
-    height: 40px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    margin: 40px 15px 10px 15px;
-    padding: 0px 20px;
+    color: coral;
+    padding: 40px;
+    font-size: 16px;
     cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.form > div > input[type="submit"]:hover {
+    color: dimgray;
 }
 
 .form > div {
     color: red;
     font-size: 14px;
     padding: 10px 0px;
+}
+.form > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }

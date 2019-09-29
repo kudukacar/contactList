@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import { fetchContact, deleteContact } from '../actions/contact_actions'
+import NavBar from './navbar';
 
 class ContactIndexItem extends React.Component {
     componentDidMount() {
@@ -11,22 +12,26 @@ class ContactIndexItem extends React.Component {
     render() {
         const { contact } = this.props;
         return (
-            <div className="contact">
-                <div>
-                    <img src={contact.image_url} alt="contact photo" />
-                    <ul>
-                        <li>{contact.name}</li>
-                        <li>Mobile {contact.mobile}</li>
-                        <li>Home {contact.home}</li>
-                        <li>Work {contact.work}</li>
-                        <li>Email {contact.email}</li>
-                        <li>Address {contact.address}</li>
-                    </ul>
+            <>
+                <NavBar/>
+                <div className="contact">
+                    <div>
+                        <img src={contact.image_url} alt="contact photo" />
+                        <ul>
+                            <li>{contact.name}</li>
+                            <li>Mobile {contact.mobile}</li>
+                            <li>Home {contact.home}</li>
+                            <li>Work {contact.work}</li>
+                            <li>Email {contact.email}</li>
+                            <li>Address {contact.address}</li>
+                        </ul>
+                    </div>
+                    <span>
+                        <Link to={`/editcontact/${contact.id}`}><i className="fas fa-edit"></i></Link>
+                        <a onClick={() => this.props.deleteContact(contact.id).then(() => this.props.history.push('/'))}><i className="far fa-trash-alt"></i></a>
+                    </span>
                 </div>
-                <Link to={`/editcontact/${contact.id}`}>Edit Contact</Link>
-                <button onClick={() => this.props.deleteContact(contact.id).then(() => this.props.history.push('/'))}>Delete Contact</button>
-            </div>
-
+            </>
         )
     }
 

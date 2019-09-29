@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import NavBar from './navbar';
 
 class ContactForm extends React.Component {
     constructor(props) {
@@ -30,48 +31,59 @@ class ContactForm extends React.Component {
 
     render() {
         return (
-            <form className="form" onSubmit={this.handleSubmit}>
-                <label htmlFor="name">Name</label>
-                <input type="text"
-                    value={this.state.name}
-                    onChange={this.update('name')}
-                    id="name" />
-                <label htmlFor="mobile">Mobile</label>
-                <input type="text"
-                    value={this.state.mobile}
-                    onChange={this.update('mobile')}
-                    id="mobile" />
-                <label htmlFor="home">Home phone</label>
-                <input type="text"
-                    value={this.state.home}
-                    onChange={this.update('home')}
-                    id="home" />
-                <label htmlFor="work">Work phone</label>
-                <input type="text"
-                    value={this.state.work}
-                    onChange={this.update('work')}
-                    id="work" />
-                <label htmlFor="email">Email</label>
-                <input type="text"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    id="email" />
-                <label htmlFor="address">Address</label>
-                <input type="text"
-                    value={this.state.address}
-                    onChange={this.update('address')}
-                    id="address" />
-                <label htmlFor="image_url">Image_url</label>
-                <input type="text"
-                    value={this.state.image_url}
-                    onChange={this.update('image_url')}
-                    id="image_url" />
-                <div>{this.errors()}</div>
-                <div>
-                    <input type="submit" value="Submit" />
-                    <button type='button' onClick={() => this.props.history.push('/')}>Cancel</button>
-                </div>
-            </form>
+            <>
+                <NavBar/>
+                <form className="form" onSubmit={this.handleSubmit}>
+                    <img src={this.state.image_url}/>
+                    <label htmlFor="name"></label>
+                    <input type="text"
+                        placeholder="Name"
+                        value={this.state.name}
+                        onChange={this.update('name')}
+                        id="name" />
+                    <label htmlFor="mobile"></label>
+                    <input type="text"
+                        placeholder="Mobile"
+                        value={this.state.mobile}
+                        onChange={this.update('mobile')}
+                        id="mobile" />
+                    <label htmlFor="home"></label>
+                    <input type="text"
+                        placeholder="Home phone"
+                        value={this.state.home}
+                        onChange={this.update('home')}
+                        id="home" />
+                    <label htmlFor="work"></label>
+                    <input type="text"
+                        placeholder="Work phone"
+                        value={this.state.work}
+                        onChange={this.update('work')}
+                        id="work" />
+                    <label htmlFor="email"></label>
+                    <input type="text"
+                        placeholder="Email"
+                        value={this.state.email}
+                        onChange={this.update('email')}
+                        id="email" />
+                    <label htmlFor="address"></label>
+                    <input type="text"
+                        placeholder="Address"
+                        value={this.state.address}
+                        onChange={this.update('address')}
+                        id="address" />
+                    <label htmlFor="image_url"></label>
+                    <input type="text"
+                        placeholder="Image_url"
+                        value={this.state.image_url}
+                        onChange={this.update('image_url')}
+                        id="image_url" />
+                    <div>{this.errors()}</div>
+                    <div>
+                        <input type="submit" value="Save" />
+                        <a type='button' onClick={() => this.props.history.push('/')}>Cancel</a>
+                    </div>
+                </form>
+            </>
         )
     }
 }

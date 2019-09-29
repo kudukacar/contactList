@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchContacts } from '../actions/contact_actions';
 import { Link, withRouter } from 'react-router-dom';
+import NavBar from './navbar';
 
 class ContactIndex extends React.Component {
 
@@ -11,14 +12,19 @@ class ContactIndex extends React.Component {
     render() {
         const contacts = this.props.contacts.map((contact,i) => {
             return (
-                <Link to={`/contact/${contact.id}`} key={i}>{contact.name}</Link>
+                <li key={i}>
+                    <img src={contact.image_url} />
+                    <Link to={`/contact/${contact.id}`}>{contact.name}</Link>
+                </li>
             );
         });
         return(
-            <div className="contacts">
-                <ul>{contacts}</ul>
-                <Link to={'/createcontact'}>Create New Contact</Link>
-            </div>
+            <>
+                <NavBar />
+                <div className="contacts">
+                    {contacts}
+                </div>
+            </>
         )
     }
 }
